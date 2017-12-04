@@ -1,0 +1,60 @@
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: .12rem;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  height: .6rem;
+  position: relative; }
+  header h1 {
+    line-height: .3rem;
+    text-align: center;
+    font-size: .14rem;
+    font-weight: normal;
+    color: #fff;
+    background: skyblue; }
+  header ul {
+    display: flex;
+    background: #fff; }
+    header ul li {
+      flex: 1;
+      text-align: center;
+      line-height: .3rem; }
+  header span {
+    position: absolute;
+    right: .15rem;
+    top: .07rem;
+    color: #fff; }
+
+section {
+  flex: 1;
+  background: #ddd; }
+  section ul {
+    padding: .05rem; }
+    section ul li {
+      display: flex;
+      background: #fff;
+      margin-bottom: .1rem; }
+      section ul li .left {
+        flex: 1;
+        text-align: center;
+        line-height: .6rem; }
+      section ul li .right {
+        flex: 4; }
+
+footer {
+  height: .5rem;
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding-top: .1rem; }
+  footer dl {
+    flex: 1;
+    text-align: center; }
+    footer dl .on {
+      color: greenyellow; }
+
+/*# sourceMappingURL=style.css.map */

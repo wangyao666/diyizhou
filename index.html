@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>公司</h1>
+        <span>
+            <i class="iconfont icon-fangdajing"></i>
+        </span>
+        <ul>
+            <li>融資ˇ</li>
+            <li>规模ˇ</li>
+            <li>行业ˇ</li>
+        </ul>
+    </header>
+    <section>
+        <ul>
+            <li>
+                <div class="left">
+                    <span>
+                        <i class="iconfont icon-fangdajing"></i>
+                    </span>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>百度</li>
+                        <li>北京市海淀区</li>
+                        <li>发电供热合同</li>
+                        <li>规范符合国家</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <dl>
+            <dt>
+                <i class="iconfont icon-fangdajing"></i>
+            </dt>
+            <dd>
+                职位
+            </dd>
+        </dl>
+        <dl>
+            <dt class="on">
+                <i class="iconfont icon-fangdajing"></i>
+            </dt>
+            <dd>
+                公司
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <i class="iconfont icon-fangdajing"></i>
+            </dt>
+            <dd>
+                消息
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <i class="iconfont icon-fangdajing"></i>
+            </dt>
+            <dd>
+                我的
+            </dd>
+        </dl>
+    </footer>
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        function ajax(url) {
+            return new Promise(function (res, rej) {
+                var xml = null;
+                var handler = function () {
+                    if (xml.readyState !== 4) return;
+                    if (xml.status === 200) {
+                        res(xml.responseText);
+                    } else {
+                        rej(new Error(xml.statusText));
+                    }
+                }
+                if (window.XMLHttpRequest) {
+                    xml = new XMLHttpRequest();
+                } else {
+                    xml = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xml.open('get', url, true);
+                xml.send();
+                xml.onreadystatechange = handler;
+            })
+        }
+
+        ajax('http://localhost:8888/test').then(function (result) {
+            var data = JSON.parse(result);
+            console.log(data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    </script>
+</body>
+
+</html>
